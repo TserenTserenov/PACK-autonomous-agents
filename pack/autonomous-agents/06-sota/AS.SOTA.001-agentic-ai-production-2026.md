@@ -1,0 +1,66 @@
+---
+id: AS.SOTA.001
+name: "Agentic AI Production Deployment (2026)"
+type: sota
+status: active
+created: 2026-03-23
+source: "OneReach AI Statistics 2026, Google Cloud ROI Study, Gartner, Scout 22 мар 2026"
+related: [AS.M.001, AS.D.001, AS.SOTA.002, AS.SOTA.003]
+s2r_families: [F8]
+---
+
+# AS.SOTA.001: Agentic AI в продакшене (2026)
+
+## Рынок
+
+- Объём: $9B+ (2026), прогноз $199B к 2034 (CAGR 43.84%)
+- Adoption: 79% организаций внедрили в той или иной форме, 52% в продакшене
+- Gartner: 40% корпоративных приложений будут встраивать агентов к концу 2026 (с <5% в 2025)
+
+## ROI (данные 2026)
+
+- Средний ROI: **171%** (США: 192%)
+- 74% достигают ROI в первый год
+- 39% сообщают об удвоении продуктивности
+- Снижение затрат: до 70% в целевых процессах
+- Рост конверсии: 4-7x
+
+## Масштаб развёртывания
+
+- **98% НЕ в масштабе:** 61% stuck in exploration, 37% пилот/ограниченный продакшен
+- **2% в масштабе:** полноценное развёртывание по департаментам
+- 39% развернули >10 агентов в масштабе предприятия
+
+## Кейсы продакшена
+
+| Отрасль | Компания | Кейс | Результат |
+|---------|----------|------|-----------|
+| Здравоохранение | AtlantiCare | Клинический ассистент (заметки, снижение admin burden) | $150B потенциальная экономия в отрасли |
+| Страхование | Отрасль | Automated underwriting, triage, fraud detection | Adoption 8% → 34% (+325% за год) |
+| Customer Service | Cisco | Автоматизация поддержки | 50%+ взаимодействий к mid-2026 |
+| Retail | Wayfair | Автоматизация процессов, инвентарь, ценообразование | «Quickly point to dollars saved» (CTO) |
+
+## Барьеры масштабирования
+
+| Барьер | % организаций |
+|--------|--------------|
+| Кибербезопасность | 35% (#1) |
+| Приватность данных | 30% |
+| Регуляторная неясность | 21% |
+| Ошибки risk management | 40% |
+
+## Ключевой инсайт
+
+ROI доказан (171%), технология работает, но governance отстаёт. 98% не в масштабе не из-за технических ограничений, а из-за отсутствия Trust Stack, bounded agency frameworks, audit trails.
+
+## Импликации для IWE
+
+- scheduler.sh → autonomous agents = доказанный путь к ROI
+- Graduated governance (WEF Trust Stack) обязательна для продакшена
+- Фокус: bounded autonomy + escalation paths + audit trails
+
+## Источники
+
+- [OneReach: Agentic AI Statistics 2026](https://onereach.ai/blog/agentic-ai-adoption-rates-roi-market-trends/)
+- [Google Cloud: ROI of AI Agents in Business](https://cloud.google.com/transform/roi-of-ai-how-agents-help-business)
+- [Landbase: 39 Agentic AI Statistics for GTM Leaders](https://www.landbase.com/blog/agentic-ai-statistics)

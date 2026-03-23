@@ -1,9 +1,10 @@
 ---
 id: AS.D.001
 name: Автономия ≠ Автоматизация
-status: draft
-source: "WEF «AI Agents in Action» (2026); DP.SOTA.006"
+status: active
+source: "WEF «AI Agents in Action» (2026); DP.SOTA.006; WEF «How to design for trust in AI agents» (2026)"
 related: [DP.D.009, DP.D.025, DP.D.033]
+updated: 2026-03-23
 ---
 
 # AS.D.001: Автономия ≠ Автоматизация
@@ -41,3 +42,29 @@ related: [DP.D.009, DP.D.025, DP.D.033]
 | 2 | Переходная зона | Fixer L1-L2 (решения в рамках) |
 | 3 | Автономия | Стратег, Idea Scout |
 | 4 | Автономия + саморазвитие | Агент с trajectory cache + reflexion |
+
+## Расширенное сравнение (WEF 2026)
+
+> Источник: WEF «How to design for trust in AI agents» (2026)
+
+| Параметр | Автономия | Автоматизация |
+|----------|-----------|----------------|
+| **Определение (WEF)** | Гибкость принятия решений | Надёжное исполнение |
+| **Decision-making** | Agent выбирает из множества опций | Фиксированный алгоритм |
+| **Governance** | Trust Stack, bounded agency, oversight | Validation, error handling, monitoring |
+| **Failure mode** | Goal drift, hallucination in action | Logic bugs, edge cases |
+| **Требования** | Legible reasoning, contestability, rollback | Idempotency, retries, logging |
+
+## Импликации для проектирования
+
+- **Автоматизация:** фокус на reliability (тесты, мониторинг, graceful degradation)
+- **Автономия:** фокус на governance (boundaries, transparency, human override)
+
+Попытка применить governance для автоматизации → overengineering.
+Попытка применить automation patterns для автономии → underspecified (agent выходит за рамки).
+
+## Источники
+
+- WEF «AI Agents in Action: Foundations for Evaluation and Governance» (январь 2026)
+- WEF «How to design for trust in AI agents» (февраль 2026)
+- Singapore IMDA Model AI Governance Framework for Agentic AI (2026)
