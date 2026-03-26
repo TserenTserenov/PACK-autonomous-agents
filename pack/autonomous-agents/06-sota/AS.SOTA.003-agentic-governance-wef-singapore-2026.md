@@ -68,7 +68,29 @@ Real-time monitoring для detecting drift (изменение поведени
 | Strategist | L2 | Human approval на dayplan |
 | Будущий Fixer | L3 | Approval gates, audit, rollback |
 
+## Production Adoption Data (2026)
+
+> Обогащение: Scout 26 мар 2026 (LangGraph, Iterathon, IBM Research)
+
+**Multi-agent orchestration в production:**
+- 40% of enterprise apps will feature task-specific agents (up from <5% in 2025)
+- **BUT:** only 10-15% of pilots reach production
+- 86% of copilot spending ($7.2B) → agent-based systems
+- **75% of multi-agent systems become unmanageable beyond 5 agents**
+
+**Production-grade patterns:**
+- State management: SQLite-based persistence, checkpoint recovery
+- Monitoring: Human-in-the-loop checks, observability (LangSmith)
+- Architecture: Structured message bus, ACP logging
+
+**Coordination cost (IBM Research):**
+- Process hand-offs: **-45%** с intelligent routing
+- Decision speed: **3x improvement**
+- Mitigation: team size limits (3-7 agents per workflow), hierarchical beyond that
+
 ## Источники
 
 - [WEF: AI Agents in Action](https://www.weforum.org/publications/ai-agents-in-action-foundations-for-evaluation-and-governance/)
 - [Singapore IMDA: Model AI Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
+- Iterathon: «Agent Orchestration 2026: LangGraph, CrewAI & AutoGen Guide» (2026)
+- IBM Research: Multi-agent coordination metrics (2026)
