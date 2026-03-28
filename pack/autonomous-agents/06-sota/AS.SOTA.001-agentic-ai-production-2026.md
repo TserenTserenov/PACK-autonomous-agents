@@ -4,7 +4,7 @@ name: "Agentic AI Production Deployment (2026)"
 type: sota
 status: active
 created: 2026-03-23
-source: "OneReach AI Statistics 2026, Google Cloud ROI Study, Gartner, Scout 22 мар 2026"
+source: "OneReach AI Statistics 2026, Google Cloud ROI Study, Gartner, Scout 22+28 мар 2026"
 related: [AS.M.001, AS.D.001, AS.SOTA.002, AS.SOTA.003]
 s2r_families: [F8]
 ---
@@ -59,8 +59,19 @@ ROI доказан (171%), технология работает, но governanc
 - Graduated governance (WEF Trust Stack) обязательна для продакшена
 - Фокус: bounded autonomy + escalation paths + audit trails
 
+## Enterprise Adoption Q1 2026 (обновление 28 мар)
+
+- **72% Global 2000** вышли за пределы пилотов (vs 52% ранее)
+- ROI по отраслям: 20% cost savings (промышленность), 15% uptime improvement (manufacturing), 85% tier-1 support automation (Salesforce)
+- 79% организаций сообщают о productivity gains, 62% ожидают ROI >100%
+- Gartner: 40% enterprise apps embed agents by 2026
+- Ключевые домены: IT ops, finance, onboarding, support
+
 ## Источники
 
 - [OneReach: Agentic AI Statistics 2026](https://onereach.ai/blog/agentic-ai-adoption-rates-roi-market-trends/)
 - [Google Cloud: ROI of AI Agents in Business](https://cloud.google.com/transform/roi-of-ai-how-agents-help-business)
 - [Landbase: 39 Agentic AI Statistics for GTM Leaders](https://www.landbase.com/blog/agentic-ai-statistics)
+- [Kore.ai: AI Agents in 2026 — From Hype to Reality](https://kore.ai/blog/ai-agents-in-2026-from-hype-to-enterprise-reality)
+- [Reinventing.ai: Enterprise Adoption March 2026](https://insights.reinventing.ai/articles/openclaw-enterprise-adoption-march-2026-03-16)
+- [Multimodal.dev: Agentic AI Statistics](https://multimodal.dev/post/agentic-ai-statistics)
