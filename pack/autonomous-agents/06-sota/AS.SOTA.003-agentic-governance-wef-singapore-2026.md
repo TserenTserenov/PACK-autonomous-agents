@@ -88,9 +88,33 @@ Real-time monitoring для detecting drift (изменение поведени
 - Decision speed: **3x improvement**
 - Mitigation: team size limits (3-7 agents per workflow), hierarchical beyond that
 
+## CSA ATF Maturity Data (Q1 2026)
+
+> Обновление: Scout 29 мар 2026. Источники: WEF Trust Stack (2026), CSA ATF, Nvidia GTC 2026.
+
+**Industry maturity assessment:**
+- Средний maturity level: **2.3 из 5** (2026)
+- Только **1/3 организаций** достигли уровня ≥3 (autonomous operations)
+- **Nvidia GTC 2026:** vendors НЕ имеют complete answers для:
+  - Agent-to-agent trust (как агент A доверяет агенту B?)
+  - Memory poisoning (как защитить shared memory?)
+  - Cryptographic binding (как привязать identity к действию?)
+
+**CSA ATF Zero Trust для AI agents:**
+- Four-layer defense-in-depth governance (LGA)
+- Layer 1: Identity verification → Layer 2: Policy enforcement → Layer 3: Runtime monitoring → Layer 4: Audit & compliance
+- Прогрессивное расширение автономии (соответствует §4 ATF уровней)
+
+**Открытые проблемы (2026):**
+- Multi-agent trust delegation (агент делегирует другому — кто отвечает?)
+- Cross-organization agent federation (агенты разных компаний взаимодействуют)
+- Liability attribution в multi-agent chains
+
 ## Источники
 
 - [WEF: AI Agents in Action](https://www.weforum.org/publications/ai-agents-in-action-foundations-for-evaluation-and-governance/)
+- [WEF: How to Design for Trust in the Age of AI Agents](https://www.weforum.org/stories/2026/02/how-to-design-for-trust-in-the-age-of-ai-agents/)
 - [Singapore IMDA: Model AI Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
+- [CSA: Agentic Trust Framework — Zero Trust Governance for AI Agents](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents)
 - Iterathon: «Agent Orchestration 2026: LangGraph, CrewAI & AutoGen Guide» (2026)
 - IBM Research: Multi-agent coordination metrics (2026)

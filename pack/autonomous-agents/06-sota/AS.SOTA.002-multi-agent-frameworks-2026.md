@@ -79,7 +79,32 @@ Executive Agent → Manager Agents → Worker Agents
 - **Нет visibility:** невозможно отследить ошибки агентов в проде
 - **Compliance gaps:** нет audit trails для регулируемых отраслей
 
+## Framework Status Update (Q1 2026)
+
+> Обновление: Scout 29 мар 2026. Источники: o-mega.ai, DataCamp.
+
+**AutoGen → Microsoft Agent Framework (maintenance mode).**
+- Переименован, находится в maintenance. Chat-heavy consensus = медленный overhead.
+- Рекомендуется только для multi-party conversations (не для production workflows).
+
+**Расширенное сравнение (Q1 2026):**
+
+| Критерий | LangGraph | CrewAI | AutoGen |
+|----------|-----------|--------|---------|
+| **Статус** | Production leader | Fastest TTM | Maintenance mode |
+| **Подход** | Graph-based, stateful | Role-based teams | Chat-based consensus |
+| **Скорость прототипа** | Дни | Часы (40% быстрее LangGraph) | Дни (overhead на consensus) |
+| **Production readiness** | Да (battle-tested) | Только прототипирование | Нет (legacy) |
+| **Лучшая роль** | Критичные workflows, масштаб | Прототип, валидация | Multi-party conversations |
+
+**Рекомендация (обновлённая):**
+- **Прототипирование:** CrewAI (самый быстрый time-to-production для standard workflows)
+- **Production:** LangGraph (graph-based, stateful, battle-tested)
+- **Multi-party conversations:** AutoGen (единственный оставшийся use case)
+
 ## Источники
 
 - [Gurusup: Best Multi-Agent Frameworks 2026](https://gurusup.com/blog/best-multi-agent-frameworks-2026)
 - [DEV Community: LangGraph vs CrewAI Complete Guide](https://dev.to/pockit_tools/langgraph-vs-crewai-vs-autogen-the-complete-multi-agent-ai-orchestration-guide-for-2026-2d63)
+- [o-mega.ai: LangGraph vs CrewAI vs AutoGen Top 10 Agent Frameworks 2026](https://o-mega.ai/articles/langgraph-vs-crewai-vs-autogen-top-10-agent-frameworks-2026)
+- [DataCamp: CrewAI vs LangGraph vs AutoGen](https://www.datacamp.com/tutorial/crewai-vs-langgraph-vs-autogen)

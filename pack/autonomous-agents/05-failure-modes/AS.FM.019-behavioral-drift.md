@@ -3,8 +3,9 @@ id: AS.FM.019
 type: failure-mode
 title: Behavioral Drift in Multi-Agent Systems
 status: active
-source: "CIO (Agentic AI Drift), Machine Learning Mastery (Production Scaling), CSA"
+source: "CIO (Agentic AI Drift), Machine Learning Mastery (Production Scaling), CSA, arxiv:2601.04170, arxiv:2506.10095, Maxim AI Guide (2026)"
 date: 2026-03-28
+updated: 2026-03-29
 severity: critical
 ---
 
@@ -36,6 +37,27 @@ severity: critical
 4. Результат: agents waiting on agents, race conditions, cascading failures, non-deterministic execution paths
 5. Симптомы: latency increase, completion rate drop, "weird behavior" — но нет явной ошибки в логах
 
+## Таксономия дрейфа (arxiv 2601.04170, Jan 2026)
+
+Три типа Agent Drift — progressive degradation через extended interaction:
+
+| Тип | Описание | Пример |
+|-----|----------|--------|
+| **Semantic drift** | Постепенное отклонение от исходного intent агента | Scheduler приоритизирует urgent над important без явного указания |
+| **Coordination drift** | Разрушение consensus mechanisms между агентами | Агенты дублируют задачи, теряя синхронизацию |
+| **Behavioral drift** | Появление непредусмотренных стратегий | Агент начинает «обходить» constraints, которые не нарушает формально |
+
+**PBSS Framework (Prompt-Based Semantic Shift):** семантически эквивалентные промпты → разные outputs из-за tokenization/decoding artifacts. Дрейф происходит **без изменений промпта** — versioning текста недостаточен, нужна **behavioral observability**.
+
+### Различение: два механизма дрейфа
+
+| | Config-Driven Drift (§ «Сценарий») | Spontaneous Drift (PBSS) |
+|---|---|---|
+| **Причина** | Обновления моделей, промптов, tools | Tokenization/decoding artifacts |
+| **Триггер** | Explicit change (код, конфиг) | Нет — дрейфует без изменений |
+| **Детектируется** | Version control + regression | Behavioral snapshots + continuous eval |
+| **Временная шкала** | Недели-месяцы (incremental updates) | Часы-дни (extended interaction) |
+
 ## Mitigation
 
 - **Behavioral Snapshots:** зафиксировать эталонное поведение (вход X → ожидаем Y). При каждом изменении — regression suite
@@ -43,6 +65,7 @@ severity: critical
 - **Deep Observability:** трассировка execution paths, behavior distribution monitoring, drift detection metrics
 - **Staged Rollouts:** canary deployment с behavior monitoring (10% трафика → мониторинг → раскатка)
 - **Circuit Breakers:** автоматический rollback если behavior divergence > threshold
+- **Continuous Evaluation:** real-time monitoring outputs vs expected patterns (не только при deploys, но и в steady-state)
 
 ## Связь с IWE
 
@@ -52,9 +75,18 @@ severity: critical
 - **WP-132** (scheduler.sh) — vulnerable без monitoring; промпты уже в git (mitigation частично)
 - **AS.M.001** (Trust Stack) — observability layer
 
+## Связь с AS.SOTA.006 (Three-Layer Framework)
+
+- **Layer 2 failures:** дрейф improvement loop — агент «самосовершенствуется» в неверном направлении
+- **Layer 3 failures:** coordination drift — агенты теряют consensus без явных ошибок
+
 ## Источники
 
 1. CIO: Agentic AI Systems Don't Fail Suddenly — They Drift Over Time
    URL: https://www.cio.com/article/4134051/agentic-ai-systems-dont-fail-suddenly-they-drift-over-time.html
 2. Machine Learning Mastery: 5 Production Scaling Challenges for Agentic AI in 2026
    URL: https://machinelearningmastery.com/5-production-scaling-challenges-for-agentic-ai-in-2026/
+3. arxiv:2601.04170 «Agent Drift: Quantifying Behavioral Degradation» (Jan 2026)
+4. arxiv:2506.10095 «When Meaning Stays the Same, but Models Drift: Token-Level Behavioral Instability»
+5. Maxim AI: «Guide to Preventing AI Agent Drift Over Time» (2026)
+   URL: https://www.getmaxim.ai/articles/a-comprehensive-guide-to-preventing-ai-agent-drift-over-time/
