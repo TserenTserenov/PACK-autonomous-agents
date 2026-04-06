@@ -80,7 +80,28 @@ s2r_families: [F8]
 | Scout | L2 | L3 | Trajectory cache + 30 дней + human review captures |
 | Strategist | L1-L2 | L2 | Audit dayplan quality, approval gate |
 
+## 6. Task-level Delegation Contract
+
+> Дополняет role-level governance (§2-§5) контрактом на конкретную задачу.
+> Источник: Zabolotnii 2026 (Bounded Delegation Envelope).
+
+При делегировании задачи автономному агенту (Night-WP, фоновый scan и т.п.) — помимо role-level ограничений (AS.M.001) определить **task-level контракт**:
+
+| Поле | Описание | Пример (Scout) |
+|------|----------|----------------|
+| `success_condition` | Явный критерий успеха задачи | «≥3 находки с relevance_score >0.7» |
+| `failure_condition` | Явный критерий провала | «0 находок ИЛИ >50% дублей с trajectory/rejected.md» |
+| `verification_steps` | Шаги проверки результата | «1. Проверить формат. 2. Сверить с rejected. 3. Оценить relevance» |
+
+**Три терминальных состояния:**
+- **Success** — артефакт соответствует `success_condition`
+- **Failed** — сработал `failure_condition` (явная ошибка)
+- **Inconclusive** — результат пуст или неопределён. Пусто ≠ успех. Требует расследования (→ VR.FM.002 вариант Empty Completion)
+
+**Связь с Graduated Governance (§3):** task-level контракт обязателен на L2+. На L1 (полностью supervised) — опционален.
+
 ## Источники
 
 - WEF «AI Agents in Action» (январь 2026)
 - Singapore IMDA Model AI Governance Framework for Agentic AI (2026)
+- Zabolotnii S. «Trust is a Pipeline» (2026) — Bounded Delegation Envelope, три терминальных состояния
