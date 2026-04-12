@@ -13,7 +13,7 @@ s2r_families: [F8]
 
 ## Рынок
 
-- Объём: $9B+ (2026), прогноз $199B к 2034 (CAGR 43.84%)
+- Объём: $9.14B (2026), прогноз $139B к 2034 (CAGR 40.5%) — источник: reinventing.ai, март 2026 *(пересмотр: предыдущий прогноз $199B / CAGR 43.84% по OneReach, устарел)*
 - Adoption: 79% организаций внедрили в той или иной форме, 52% в продакшене
 - Gartner: 40% корпоративных приложений будут встраивать агентов к концу 2026 (с <5% в 2025)
 
@@ -66,6 +66,20 @@ ROI доказан (171%), технология работает, но governanc
 - 79% организаций сообщают о productivity gains, 62% ожидают ROI >100%
 - Gartner: 40% enterprise apps embed agents by 2026
 - Ключевые домены: IT ops, finance, onboarding, support
+
+## Governance Crisis Forecast Q1 2026 (обновление: Scout 12 апр 2026)
+
+> Источник: https://insights.reinventing.ai/articles/openclaw-enterprise-adoption-march-2026-03-16
+
+**Gartner projection:** 40%+ agentic AI проектов будут отменены к 2027
+- Причина: governance failures + неконтролируемые затраты
+- НЕ технологические ограничения
+
+**Market revision:** $9.14B (2026) → $139B (2034), CAGR 40.5%
+
+**Bottleneck shift:** «как деплоить» → «как управлять, мониторить и контролировать стоимость». Governance, observability, cost control = критический capability gap в 2026.
+
+**Импликация для IWE:** Валидирует стратегию governance-first (WP-217), capture-шина (DP.SC.025), agent behavior gates (WP-229) — не академические упражнения, а response на production reality.
 
 ## Источники
 
