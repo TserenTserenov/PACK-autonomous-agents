@@ -4,6 +4,9 @@ name: Разведчик ≠ Исследователь
 type: distinction
 created: 2026-03-23
 source: Практика WP-132 — rt-003/rt-004 неэффективны в Scout
+related:
+  extends: [AS.D.003]
+  uses: [AS.D.002]
 ---
 
 # AS.D.008: Разведчик ≠ Исследователь
