@@ -81,6 +81,34 @@ ROI доказан (171%), технология работает, но governanc
 
 **Импликация для IWE:** Валидирует стратегию governance-first (WP-217), capture-шина (DP.SC.025), agent behavior gates (WP-229) — не академические упражнения, а response на production reality.
 
+## Claude Managed Agents — Production Deployment Primitive (Scout 23 апр 2026)
+
+> Источник: [Anthropic Blog: Claude Managed Agents](https://www.claude.com/blog/claude-managed-agents) (8 апр 2026, public beta); [InfoWorld: Claude Managed Agents coverage](https://www.infoworld.com/article/3978829/anthropic-introduces-managed-agents-for-claude.html) (8 апр 2026)
+
+**Anthropic, 8 апреля 2026, public beta.** Managed infrastructure для production-агентов — закрывает governance/observability/cost gap, который Gartner называет причиной 40% cancel risk (см. выше).
+
+**Состав примитива:**
+- Sandboxed code execution
+- Checkpointing + state persistence через session interruptions
+- Credential management (vault для API-ключей агентов)
+- Scoped permissions (bounded agency из коробки)
+- End-to-end tracing (OTel-совместимый, см. DP.SOTA.015)
+
+**Pricing:** Standard Claude API token rates + **$0.08/session-hour** (active runtime) — отдельная метрика «session-hour» превращает runtime в предсказуемую единицу стоимости.
+
+**Adoption (public beta):** Notion, Rakuten, Sentry — в production.
+
+**Архитектурный принцип:**
+- **Разработчик** отвечает за: задачи агентов, guardrails, prompts
+- **Anthropic** отвечает за: инфраструктуру, безопасность, state management, tracing
+
+**Заявленный эффект:** time-to-production с месяцев до дней за счёт ухода от кастомной инфраструктуры.
+
+**Импликация для IWE:**
+- Валидирует ставку на **managed runtime** (vs self-hosted scheduler + кастомный trust stack): рынок подтверждает, что 80% governance-boilerplate вынесено в платформу.
+- Триггер пересмотра WP-187 и связанных: что строим сами vs берём у Anthropic до 1 мая (MVP gate).
+- Для платформы IWE — кандидат на бенчмарк: какие слои governance (WP-217) уже покрыты Managed Agents, какие требуют собственной реализации (IWE-специфика: Pack-aware агенты, ОРЗ-фрактал).
+
 ## Источники
 
 - [OneReach: Agentic AI Statistics 2026](https://onereach.ai/blog/agentic-ai-adoption-rates-roi-market-trends/)

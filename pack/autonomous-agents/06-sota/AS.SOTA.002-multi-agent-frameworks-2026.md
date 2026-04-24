@@ -102,6 +102,41 @@ Executive Agent → Manager Agents → Worker Agents
 - **Production:** LangGraph (graph-based, stateful, battle-tested)
 - **Multi-party conversations:** AutoGen (единственный оставшийся use case)
 
+## Production Architecture Shift 2026 — Controllable Orchestration (Scout 23 апр)
+
+> Источники: arxiv:2601.12560 «AI Agent Index 2025» (published Feb 2026), DEV Community orchestration guide 2026.
+
+**Сдвиг парадигмы 2025→2026:**
+
+> "Practical shift toward controllable orchestration: developers specify explicit state transitions and guardrails; models fill in local decisions."
+
+**2025** — акцент на **agent autonomy** (пусть модель сама решает, как дойти до цели).
+**2026** — акцент на **agent controllability** (разработчик задаёт state machine, модель заполняет только локальные решения внутри узлов).
+
+Это сужение scope модели и расширение scope explicit logic. Причина сдвига — production-требования: debuggability, compliance, cost control.
+
+### Признаки controllable orchestration
+
+| Признак | Реализация |
+|---------|------------|
+| **Graph-based orchestration** | LangGraph как production leader |
+| **State machines** | Явные переходы, checkpointable состояния |
+| **Debuggability as primary design criterion** | Трассировка каждого перехода, reproducibility |
+| **Checkpointing** | Persist state между steps (см. Claude Managed Agents, AS.SOTA.001 enrichment) |
+| **Human approval gates** | Обязательный step для high-risk transitions |
+
+### State machine pattern — дизайн-умолчание 2026
+
+Для production multi-agent системы рекомендуется **начинать со state machine**, а не с emergent orchestration. Emergent (AS.SOTA.007) уместен только для research tasks с verifiable outcome (AS.D.009). Для production с требованием audit + rollback — controllable.
+
+### Контраст с research-кейсом
+
+**Противоположный тренд для open-ended research:** Anthropic W2S (AS.SOTA.007) показал, что minimal scaffolding даёт выигрыш, когда цель верифицируема и задача исследовательская. То есть в 2026 рынок бифуркируется:
+- **Production workflows** → controllable orchestration (state machines, explicit guardrails)
+- **Research/exploration** → emergent coordination (shared forum, minimal scaffolding)
+
+Проектировщик обязан определить тип задачи (через AS.D.009 verifiable/non-verifiable + open-ended vs bounded) до выбора архитектуры.
+
 ## Источники
 
 - [Gurusup: Best Multi-Agent Frameworks 2026](https://gurusup.com/blog/best-multi-agent-frameworks-2026)
